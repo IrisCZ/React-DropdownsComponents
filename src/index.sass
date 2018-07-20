@@ -1,0 +1,45 @@
+@import variables.sass
+
+body 
+  font-family: sans-serif
+  margin: 0
+  overflow:  hidden
+  padding: 0
+
+.app__logo 
+  height: 5rem
+
+.app__header 
+  background-color: white
+  padding: 1.5rem
+  text-align: center
+
+//COMMON STYLES
+
+.hidden
+  display: none
+
+.button
+  align-items: center
+  background-color: transparent
+  border-radius: 6px
+  color: $text-grey
+  cursor: pointer
+  display: flex
+  outline: none
+  padding: .8em
+
+.dropdown__list
+    background-color: white
+    border: 1px solid $button-grey
+    border-radius: 6px
+    font-size: .8em
+    list-style-type: none
+    margin-top: .1em
+    padding: 0  
+    position: absolute
+    text-align: left
+
+.disabled
+  opacity: .25
+  pointer-events: none

@@ -1,0 +1,47 @@
+@import variables.sass
+
+.app 
+  color: $text-grey
+
+.nav-bar 
+  align-content: center
+  background-color: $bg-grey
+  display: flex
+  height: 2.25rem
+  justify-content: space-around
+  padding: 1.5rem
+
+
+.app__info
+  padding: 2.5em
+  display: grid
+  grid-template-columns: 1fr 1fr 
+
+  .app__info__table
+    border-collapse: collapse
+    width: 100%
+
+    .app__info__row
+
+      >*
+        border: 1px solid $bg-grey
+        margin: 0
+        padding: 1em
+      
+      .app__info__title
+        font-size: .8em
+        font-weight: 900
+        width: 35%
+
+  .app__form
+
+    .app__form__group
+      border: none
+
+      .app__form__group__title
+        display: block
+      
+      .app__form__group__field
+        padding: .5em
+        width: 100%
+
