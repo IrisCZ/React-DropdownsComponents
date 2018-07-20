@@ -5,6 +5,7 @@ class OptionsGroup extends Component {
     constructor(props){
         super(props)
         this.handleOptionChange = this.handleOptionChange.bind(this)
+
         this.state = {
             selectedOption: props.default
         };
@@ -19,11 +20,14 @@ class OptionsGroup extends Component {
     }
 
     render() {
-        console.log(this.props.disabled)
 
         return (
             <ul className="options-group">
                 {this.props.options.map( ( option, index ) => {
+                    let disabledClass = ""
+                    if (this.props.disabled && this.props.disabled.indexOf(option) >= 0) {
+                        disabledClass = " disabled "
+                    }
                     return (
                         <li key={ `option-${ index }` } className="option">
                             <input 
@@ -34,7 +38,7 @@ class OptionsGroup extends Component {
                                 value={ option } 
                                 checked={this.state.selectedOption ===  option } 
                                 onChange={this.handleOptionChange} />
-                            <label className={"option-name " + (this.props.disabled.indexOf(option) >= 0 ? 'disabled' : '')} htmlFor = {option}> { option }</label>
+                            <label className={`option-name  ${disabledClass}`} htmlFor = {option}> { option }</label>
                         </li>)
                 })}
             </ul>
