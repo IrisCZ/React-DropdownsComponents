@@ -20,10 +20,10 @@
         right: -1em
 
         .option
-            font-weight: 900
+            font-weight: 700
             &:first-child
                 color: $main-color
-                &::before
+                .option-name::before
                     content: "\f15c"
                     font-family: 'Font Awesome\ 5 Free'
                     font-weight: 900
@@ -34,7 +34,7 @@
                     position: absolute
             &:last-child
                 color: red
-                &::before
+                .option-name::before
                     content: "\f15b"
                     font-family: 'Font Awesome\ 5 Free'
                     font-weight: 900
