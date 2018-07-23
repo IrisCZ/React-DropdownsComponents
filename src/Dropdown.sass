@@ -1,0 +1,32 @@
+@import variables.sass
+
+.dropdown__list
+  background-color: white
+  border: 1px solid $button-grey
+  border-radius: 6px
+  font-size: .8rem
+  list-style-type: none
+  margin-top: .1em
+  padding: 0  
+  position: absolute
+  text-align: left
+  &::before
+    content: ''
+    position: absolute
+    height: 0
+    width: 0
+    right: 15px
+    top: -9px
+    border: 9px solid transparent
+    border-top: 0
+    border-bottom-color: $button-grey
+  &::after
+    content: ''
+    position: absolute
+    height: 0
+    width: 0
+    right: 16px
+    top: -7px
+    border: 7px solid transparent
+    border-top: 0
+    border-bottom-color: #ffffff

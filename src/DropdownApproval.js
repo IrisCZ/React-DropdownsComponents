@@ -1,26 +1,19 @@
-import React, { Component } from 'react';
-import './DropdownApproval.css';
-import OptionsGroup from './OptionsGroup.js';
+import React from 'react'
+import './DropdownApproval.css'
+import Dropdown from './Dropdown.js'
+import OptionsGroup from './OptionsGroup.js'
 
 
-class DropdownApproval extends Component {
+class DropdownApproval extends Dropdown {
     constructor(){
         super()
         this.toggle = this.toggle.bind(this)
         this.setOption = this.setOption.bind(this)
         this.state = {
-            dropdownOpen: false,
             optionSelected: "",
             optionValues: ['Approve', 'Reject'],
             optionsDisabled: []
         }
-
-    }
-
-    toggle() {
-        this.setState(prevState => ({
-            dropdownOpen: !prevState.dropdownOpen
-        }))
 
     }
 
@@ -61,7 +54,7 @@ class DropdownApproval extends Component {
                 this.state.dropdownOpen &&
                 <ul className="dropdown__list">
                     <li className="dropdown-approval__options" >
-                        <OptionsGroup options={this.state.optionValues} name='Hiring' setOption={this.setOption} disabled={this.state.optionsDisabled}/>
+                        <OptionsGroup options={this.state.optionValues} name="Hiring" setOption={this.setOption} disabled={this.state.optionsDisabled}/>
                     </li>
                 </ul>
             }
@@ -73,4 +66,4 @@ class DropdownApproval extends Component {
     }
 }
 
-export default DropdownApproval;
+export default DropdownApproval

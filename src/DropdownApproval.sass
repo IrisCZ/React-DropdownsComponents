@@ -2,44 +2,43 @@
 @import index.sass
 
 .dropdown-approval
-    justify-self: center
-    position: relative
-    white-space: nowrap
+  justify-self: center
+  position: relative
+  white-space: nowrap
 
-    .dropdown-approval__button
-        border: 1px solid $button-grey
-        color: $text-grey
-        font-size: .8em
-        font-weight: 700
+  .dropdown-approval__button
+    border: 1px solid $button-grey
+    color: $text-grey
+    font-size: .8em
+    font-weight: 700
 
-        &:hover
-            border-color: $main-color
-            
-    .dropdown__list
+    &:hover
+      border-color: $main-color
+        
+  .dropdown__list
+    right: -1em
+
+    .option
+      font-weight: 700
+      &:first-child
+        color: $main-color
+        .option-name::before
+          content: "\f15c"
+          font-family: 'Font Awesome\ 5 Free'
+          font-weight: 900
+          font-style: normal
+          left: 1.8em
+          margin: 0 .6em .6em 0
+          text-decoration: none
+          position: absolute
+      &:last-child
+      color: red
+      .option-name::before
+        content: "\f15b"
+        font-family: 'Font Awesome\ 5 Free'
+        font-weight: 900
+        font-style: normal
+        left: 1.8em
+        margin: 0 .6em .6em 0
+        text-decoration: none
         position: absolute
-        right: -1em
-
-        .option
-            font-weight: 700
-            &:first-child
-                color: $main-color
-                .option-name::before
-                    content: "\f15c"
-                    font-family: 'Font Awesome\ 5 Free'
-                    font-weight: 900
-                    font-style: normal
-                    left: 1.8em
-                    margin: 0 .6em .6em 0
-                    text-decoration: none
-                    position: absolute
-            &:last-child
-                color: red
-                .option-name::before
-                    content: "\f15b"
-                    font-family: 'Font Awesome\ 5 Free'
-                    font-weight: 900
-                    font-style: normal
-                    left: 1.8em
-                    margin: 0 .6em .6em 0
-                    text-decoration: none
-                    position: absolute

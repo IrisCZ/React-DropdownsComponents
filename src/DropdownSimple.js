@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import './DropdownSimple.css';
-import OptionsGroup from './OptionsGroup.js';
+import React from 'react'
+import './DropdownSimple.css'
+import Dropdown from './Dropdown.js'
+import OptionsGroup from './OptionsGroup.js'
 
 
-class DropdownSimple extends Component {
+class DropdownSimple extends Dropdown {
     constructor(){
         super()
         this.toggle = this.toggle.bind(this)
         this.showForm = this.showForm.bind(this)
         this.setOption = this.setOption.bind(this)
         this.state = {
-            dropdownOpen: false,
             options: {},
             optionValues: ['Cancel hiring', 'Extend hiring']
         }
@@ -20,13 +20,6 @@ class DropdownSimple extends Component {
     showForm(){
         this.toggle()
         this.props.showForm()
-    }
-
-    toggle() {
-        this.setState(prevState => ({
-            dropdownOpen: !prevState.dropdownOpen
-        }))
-
     }
 
     setOption(name,value){
@@ -50,16 +43,15 @@ class DropdownSimple extends Component {
                 this.state.dropdownOpen &&
                 <ul className="dropdown__list">
                     <li className="dropdown-simple__options" >
-                        <OptionsGroup options={this.state.optionValues} name='Hiring' setOption={this.setOption} />
+                        <OptionsGroup options={this.state.optionValues} name="Hiring" setOption={this.setOption} />
                     </li>
                 </ul>
             }
 
             </div>
         )
-
         
     }
 }
 
-export default DropdownSimple;
+export default DropdownSimple

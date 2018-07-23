@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import './App.css';
-import DropdownMultiple from './DropdownMultiple.js';
-import DropdownSimple from './DropdownSimple.js';
-import DropdownApproval from './DropdownApproval';
+import React, { Component } from 'react'
+import './App.css'
+import DropdownMultiple from './DropdownMultiple.js'
+import DropdownSimple from './DropdownSimple.js'
+import DropdownApproval from './DropdownApproval'
 
 
 class App extends Component {
 
   constructor(){
-    super();
+    super()
     this.setSelectedOptions = this.setSelectedOptions.bind(this)
     this.showForm = this.showForm.bind(this)
     this.state = {
@@ -84,8 +84,8 @@ class App extends Component {
 
         </article>
       </section>
-    );
+    )
   }
 }
 
-export default App;
+export default App

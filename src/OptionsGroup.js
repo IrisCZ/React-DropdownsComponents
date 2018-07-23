@@ -1,22 +1,25 @@
-import React, { Component } from 'react';
-import './OptionsGroup.css';
+import React, { Component } from 'react'
+import './OptionsGroup.css'
 
 class OptionsGroup extends Component {
+
     constructor(props){
         super(props)
         this.handleOptionChange = this.handleOptionChange.bind(this)
 
         this.state = {
             selectedOption: props.default
-        };
+        }
 
     }
 
     handleOptionChange(e) {
+
         this.setState({
             selectedOption: e.target.value
         });
         this.props.setOption(this.props.name, e.target.value)
+
     }
 
     render() {
@@ -43,13 +46,16 @@ class OptionsGroup extends Component {
                 })}
             </ul>
         )
+
     }
 
     componentDidMount() {
+
         if(this.state.selectedOption){
             this.props.setOption(this.props.name, this.state.selectedOption)
         }
     }
+    
 }
 
-export default OptionsGroup;
+export default OptionsGroup

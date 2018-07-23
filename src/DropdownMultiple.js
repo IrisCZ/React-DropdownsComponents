@@ -1,24 +1,20 @@
-import React, { Component } from 'react';
-import './DropdownMultiple.css';
-import OptionsGroup from './OptionsGroup.js';
+import React from 'react'
+import './DropdownMultiple.css'
+import Dropdown from './Dropdown.js'
+import OptionsGroup from './OptionsGroup.js'
 
-class DropdownMultiple extends Component {
+class DropdownMultiple extends Dropdown {
     constructor(){
         super() 
         this.toggle = this.toggle.bind(this)
         this.apply =this.apply.bind(this)
         this.setOption = this.setOption.bind(this)
         this.state = {
-            dropdownOpen: false,
             options: {}
         }
     }
     
-    toggle() {
-        this.setState(prevState => ({
-            dropdownOpen: !prevState.dropdownOpen
-        }));
-    }
+   
 
     setOption(name,value){
         let options = this.state.options
@@ -45,13 +41,13 @@ class DropdownMultiple extends Component {
                     this.state.dropdownOpen &&
                     <ul className="dropdown__list">
                         <li>
-                            <OptionsGroup options={['Any signature state', 'Signed', 'Not signed']} name='Signed' setOption={this.setOption} default='Any signature state' />
+                            <OptionsGroup options={["Any signature state", "Signed", "Not signed"]} name="Signed" setOption={this.setOption} default="Any signature state" />
                         </li>
                         <li>
-                            <OptionsGroup options={['Any signature state', 'Signed by Jobandtalent', 'Not signed by Jobandtalent']} name='Signed By'  setOption={this.setOption}  default='Any signature state' />
+                            <OptionsGroup options={["Any signature state", "Signed by Jobandtalent", "Not signed by Jobandtalent"]} name="Signed By"  setOption={this.setOption}  default="Any signature state" />
                         </li>
                         <li>
-                            <OptionsGroup options={['Any review state', 'Review pending', 'Review aproved', 'Review rejected']} name='State Review'  setOption={this.setOption}  default='Any review state' />
+                            <OptionsGroup options={["Any review state", "Review pending", "Review aproved", "Review rejected"]} name="State Review"  setOption={this.setOption}  default="Any review state" />
                         </li>
                         <li className="dropdown__apply" onClick={this.apply}>Apply</li>
                     </ul>
@@ -62,4 +58,4 @@ class DropdownMultiple extends Component {
     }
 }
 
-export default DropdownMultiple;
+export default DropdownMultiple
