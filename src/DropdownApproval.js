@@ -9,11 +9,11 @@ class DropdownApproval extends Dropdown {
         super()
         this.toggle = this.toggle.bind(this)
         this.setOption = this.setOption.bind(this)
-        this.state = {
+        this.state = Object.assign({
             optionSelected: "",
             optionValues: ['Approve', 'Reject'],
             optionsDisabled: []
-        }
+        },this.state)
 
     }
 

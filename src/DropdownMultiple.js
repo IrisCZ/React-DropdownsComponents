@@ -9,9 +9,9 @@ class DropdownMultiple extends Dropdown {
         this.toggle = this.toggle.bind(this)
         this.apply =this.apply.bind(this)
         this.setOption = this.setOption.bind(this)
-        this.state = {
-            options: {}
-        }
+        this.state = Object.assign({
+            options: {}}
+        ,this.state)
     }
     
    

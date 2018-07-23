@@ -10,24 +10,24 @@ class DropdownSimple extends Dropdown {
         this.toggle = this.toggle.bind(this)
         this.showForm = this.showForm.bind(this)
         this.setOption = this.setOption.bind(this)
-        this.state = {
+        this.state = Object.assign({
             options: {},
             optionValues: ['Cancel hiring', 'Extend hiring']
-        }
+        },this.state)
 
     }
 
     showForm(){
-        this.toggle()
         this.props.showForm()
     }
-
+    
     setOption(name,value){
         let options = this.state.options
         options[name] = value
         this.setState({
             options: options
-          })
+        })
+        this.toggle()
         this.showForm()  
     }
 
