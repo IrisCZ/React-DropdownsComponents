@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactTestUtils from 'react-dom/test-utils';
 import DropdownApproval from './DropdownApproval.js';
 import Enzyme, {shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -9,9 +10,7 @@ describe(DropdownApproval, () => {
   let dropdown;
 
   beforeEach(function() {
-
     dropdown = shallow(<DropdownApproval />);
-    
   });
 
   it('changes its options', () => {

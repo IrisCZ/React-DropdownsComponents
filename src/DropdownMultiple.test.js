@@ -10,23 +10,17 @@ describe(DropdownMultiple, () => {
   let dropdown;
 
   beforeEach(function() {
-
     dropdown = shallow(<DropdownMultiple />);
-
   });
 
   it('is an element', () => {
-
     ReactTestUtils.isElement(dropdown)
-
   });
 
   it('changes its state when dropdown multiple button is clicked', () => {
     
     const dropdownButton = dropdown.find('button.dropdown-multiple__button');
-
     dropdownButton.simulate('click');
-
     expect(dropdown.state().dropdownOpen).toEqual(true);
 
   });
@@ -38,7 +32,6 @@ describe(DropdownMultiple, () => {
     expect(dropdown.find('ul.dropdown__list')).toHaveLength(0);
 
     dropdownButton.simulate('click');
-    
     expect(dropdown.find('ul.dropdown__list')).toHaveLength(1);
     
   });

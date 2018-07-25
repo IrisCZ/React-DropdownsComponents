@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactTestUtils from 'react-dom/test-utils';
 import DropdownSimple from './DropdownSimple.js';
 import Enzyme, {shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -9,13 +10,14 @@ describe(DropdownSimple, () => {
   let dropdown;
 
   beforeEach(function() {
-
     dropdown = shallow(<DropdownSimple showForm={function(){}} />);
-    
   });
+
 
   it('checks that when an options is clicked the dropdown  closes', () => {
     
+    const dropdownButton = dropdown.find('button.dropdown-simple__button');
+
     dropdown.instance().setOption('name', 'Cancel hiring');
 
     expect(dropdown.find('ul.dropdown__list')).toHaveLength(0);
